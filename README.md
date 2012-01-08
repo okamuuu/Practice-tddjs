@@ -2,7 +2,7 @@ DESCRIPTION
 
     this is my practice of Test Driven Javascript Development.
 
-SEE ALSL
+SEE ALS0
 
     http://tddjs.com/
 
