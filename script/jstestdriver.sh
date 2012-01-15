@@ -9,7 +9,7 @@ SAFARI=script/safari
 FIREFOX=script/firefox
 CHROME=script/chrome
 
-FULL=1
+FULL=0
 if [ $FULL = 0 ];then
     BROWSERS=${CHROME}
 else
