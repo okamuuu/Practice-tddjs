@@ -1,6 +1,6 @@
 DESCRIPTION
 
-    this is my practice of Test Driven Javascript Development.
+    This is my practice of Test Driven Javascript Development.
 
 SEE ALS0
 

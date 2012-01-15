@@ -134,3 +134,51 @@ TestCase("ObjectLoopTest", {
         assertEquals(expected, result.sort());
     }
 });
+
+TestCase("PropertyEnumerationTest", {
+    "test should enumerate shadowed object properties.":
+    function () {
+        var object = {
+            toString: "toString",
+            toLocaleString: "toLocaleString",
+            valueOf: "valueOf",
+            hasOwnProperty: "hasOwnProperty",
+            isPrototypeOf: "isPrototypeOf",
+            propertyIsEnumerable: "propertyIsEnumerable",
+            constructor: "constructor"
+        };
+
+        var result = [];
+
+//      for (var property in object) {
+//          result.push(property);
+//      }
+        tddjs.each(object, function (property) {
+            result.push(property);
+        }); 
+
+        assertEquals(7, result.length);
+    },
+    
+    "test should enumerate shadowed function properties":
+    function () {
+        var object = function () {};
+
+        object.prototype = "prototype";
+        object.call = "call";
+        object.apply = "apply";
+
+        var result = [];
+
+//      for (var property in object) {
+//          result.push(property);
+//      }
+        tddjs.each(object, function (property) {
+            result.push(property);
+        }); 
+
+        assertEquals(3, result.length);
+    }
+});
+
+
